@@ -13,7 +13,7 @@ Then you can access localhost:56789, which will connect to the EC2 instance port
 > Port forwarding feature on Session Manager is generally available since August, 2019, for detail please refer to this AWS [blog post](https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/).
 
 ## Session Manager Port Forwarding to Remote Host
-[Announced on May 27, 2022](https://aws.amazon.com/about-aws/whats-new/2022/05/aws-systems-manager-support-port-forwarding-remote-hosts-using-session-manager/), Session Manager supports forwarding connections from a client machine / laptop to ports on remote hosts. With remote port forwarding, you can now use a managed instance as a “jump host” to securely connect to an application port on remote servers, such as databases and web servers, without exposing those servers to outside network. For example in the following diagram:
+[Announced on May 27, 2022](https://aws.amazon.com/about-aws/whats-new/2022/05/aws-systems-manager-support-port-forwarding-remote-hosts-using-session-manager/), Session Manager supports forwarding connections from a client machine / laptop to ports on remote hosts. With remote port forwarding, you can now use a managed instance as a “jump host” to securely connect to an application port on remote servers, such as databases and web servers, without exposing those servers to public network and without the need of client VPN. For example in the following diagram:
 ![](diagram/ssm-port-forward-diagram.drawio.png)
 
 - After port forwarding to RDS MySQL host is setup, when you connect to localhost:56789 on your laptop, you are actually connected to the RDS MySQL database port 3306.
