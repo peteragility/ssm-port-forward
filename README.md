@@ -29,7 +29,7 @@ Then you can access localhost:56789, which will connect to the EC2 instance port
 5. In your client laptop, run the following command to setup port forwarding to remote host, **the remote host can be any host/port that your EC2 jump host can connect to**, in this example it is RDS MySQL database port 3306:
 ```
 aws ssm start-session \
-    --target instance-id-the-jump-host \
+    --target ec2-jump-host-instance-id \
     --document-name AWS-StartPortForwardingSessionToRemoteHost \
     --parameters '{"host":["mydb.example.ap-east-1.rds.amazonaws.com"],"portNumber":["3306"], "localPortNumber":["56789"]}'
 ```
