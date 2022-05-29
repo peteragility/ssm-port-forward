@@ -25,7 +25,7 @@ Then you can access localhost:56789, which will connect to the EC2 instance port
 1. Setup a EC2 jump host, either in a public subnet or in private subnet, if you want to setup it in a private subnet please setup NAT gateway or interface VPC endpoint for system manager, the jump host must have outbound network access to the SSM endpoints outside VPC.
 2. Notice that there is NO NEED to allow any inbound ports in the jump host's security group. The jump host connect to the SSM endpoints, and your client laptop also connect to the SSM endpoints, and then your laptop and jump host can communicate.
 3. Ensure your jump host installed with latest SSM agent, for port forwarding to remote host to work, the SSM agent version must be >= 3, please refer to [here](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent-v3.html) for detail.
-4. In your client laptop, ensure you have AWS CLI installed and with [Session Manager plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-verify) installed.
+4. In your client laptop, ensure you have AWS CLI installed and with [Session Manager plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) installed.
 5. In your client laptop, run the following command to setup port forwarding to remote host, the remote host is a RDS MySQL database port 3306 in this example:
 ```
 aws ssm start-session \
